@@ -110,6 +110,7 @@ export const portfolio: Portfolio = {
         "Personal attendance viewing",
       ],
       technologies: ["Web Application", "Database", "Authentication"],
+      image: "/attendance.png",
       liveUrl: "https://attendancecontrol.kesug.com",
       featured: true,
     },
