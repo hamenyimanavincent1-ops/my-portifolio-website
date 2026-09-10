@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/social-icons";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/fade-in";
@@ -17,7 +18,8 @@ export function Hero() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--primary)_/_5%,_transparent_50%)]" />
 
       <div className="relative mx-auto w-full max-w-6xl px-4 py-24 sm:px-6">
-        <div className="max-w-3xl">
+        <div className="grid items-center gap-12 lg:grid-cols-[1fr_auto]">
+          <div className="max-w-3xl">
           <FadeIn>
             <p className="mb-4 text-sm font-medium uppercase tracking-widest text-primary">
               Software Developer
@@ -86,6 +88,23 @@ export function Hero() {
               ))}
             </div>
           </FadeIn>
+          </div>
+
+          {profile.profileImage && (
+            <FadeIn delay={150}>
+              <div className="hidden lg:block">
+                <div className="relative h-64 w-64 overflow-hidden rounded-2xl border border-border shadow-xl shadow-primary/10">
+                  <Image
+                    src={profile.profileImage}
+                    alt={`Portrait of ${profile.name}`}
+                    fill
+                    sizes="256px"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </FadeIn>
+          )}
         </div>
       </div>
     </section>

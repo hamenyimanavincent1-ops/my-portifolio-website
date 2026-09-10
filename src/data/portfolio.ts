@@ -11,6 +11,7 @@ export const portfolio: Portfolio = {
     whatsapp: "+250 791 222 274",
     github: "https://github.com/vincenthamenyimana1-ux",
     linkedin: "https://linkedin.com/in/vincent",
+    profileImage: "/me.png",
   },
 
   about: {
