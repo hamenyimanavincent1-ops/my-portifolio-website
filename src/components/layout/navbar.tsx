@@ -42,9 +42,10 @@ export function Navbar() {
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <a
           href="#home"
-          className="text-lg font-bold tracking-tight text-foreground"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-lg font-bold text-primary-foreground"
+          aria-label="HAMENYIMANA Vincent - Home"
         >
-          V<span className="text-primary">.</span>
+          V
         </a>
 
         <div className="hidden items-center gap-1 md:flex">

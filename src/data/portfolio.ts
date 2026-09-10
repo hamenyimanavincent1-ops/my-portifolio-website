@@ -126,6 +126,7 @@ export const portfolio: Portfolio = {
         "Transaction history",
       ],
       technologies: ["Web Application", "Database"],
+      liveUrl: "https://itsinda.netlify.app/",
       featured: true,
     },
   ],
