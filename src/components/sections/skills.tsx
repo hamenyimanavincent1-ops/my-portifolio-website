@@ -42,7 +42,7 @@ export function Skills() {
                       <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
                         <Icon className="h-5 w-5 text-primary" />
                       </div>
-                      <h3 className="text-lg font-semibold text-foreground">
+                      <h3 className="text-lg font-semibold text-primary">
                         {category.category}
                       </h3>
                     </div>

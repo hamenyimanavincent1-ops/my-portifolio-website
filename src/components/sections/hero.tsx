@@ -5,11 +5,10 @@ import Image from "next/image";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/social-icons";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/fade-in";
-import { BackgroundVideo } from "@/components/ui/background-video";
 import { portfolio } from "@/data/portfolio";
 
 export function Hero() {
-  const { profile, skills, socialLinks, settings } = portfolio;
+  const { profile, skills, socialLinks } = portfolio;
   const techBadges = skills
     .flatMap((category) => category.skills.map((skill) => skill.name))
     .filter((name) =>
@@ -21,13 +20,6 @@ export function Hero() {
       id="home"
       className="relative flex min-h-screen items-center overflow-hidden"
     >
-      <BackgroundVideo
-        src={settings.heroVideo}
-        poster={settings.heroVideoPoster}
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/50" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--primary)_/_6%,_transparent_50%)]" />
-
       <div className="relative mx-auto w-full max-w-6xl px-4 py-24 sm:px-6">
         <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto]">
           <div className="max-w-3xl">
@@ -48,17 +40,8 @@ export function Hero() {
             </FadeIn>
 
             <FadeIn delay={150}>
-              <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-                {profile.name.split(" ").map((word, i) => (
-                  <span key={i}>
-                    {i === 0 ? (
-                      <span className="text-primary">{word}</span>
-                    ) : (
-                      <> </>
-                    )}
-                    {i > 0 ? word : ""}
-                  </span>
-                ))}
+              <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl lg:text-6xl">
+                {profile.name}
               </h1>
             </FadeIn>
 
@@ -134,13 +117,13 @@ export function Hero() {
           {profile.profileImage && (
             <FadeIn delay={200}>
               <div className="flex justify-center">
-                <div className="relative h-48 w-48 overflow-hidden rounded-2xl border border-border shadow-xl shadow-primary/10 sm:h-56 sm:w-56 lg:h-72 lg:w-72">
+                <div className="relative h-64 w-64 overflow-hidden rounded-2xl border border-border shadow-xl shadow-primary/10 sm:h-72 sm:w-72 lg:h-80 lg:w-80">
                   <Image
                     src={profile.profileImage}
                     alt={`Portrait of ${profile.name}`}
                     fill
                     priority
-                    sizes="(max-width: 640px) 192px, (max-width: 1024px) 224px, 288px"
+                    sizes="(max-width: 640px) 256px, (max-width: 1024px) 288px, 320px"
                     className="object-cover"
                   />
                 </div>

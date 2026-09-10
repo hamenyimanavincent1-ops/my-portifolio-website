@@ -97,7 +97,7 @@ export function Contact() {
                     <Mail className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-foreground">Email</h3>
+                    <h3 className="font-medium text-primary">Email</h3>
                     <a
                       href={`mailto:${profile.email}`}
                       className="text-sm text-muted-foreground transition-colors hover:text-primary"
@@ -114,7 +114,7 @@ export function Contact() {
                     <Phone className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-foreground">Phone</h3>
+                    <h3 className="font-medium text-primary">Phone</h3>
                     <a
                       href={`tel:${profile.phone.replace(/\s+/g, "")}`}
                       className="text-sm text-muted-foreground transition-colors hover:text-primary"
@@ -131,7 +131,7 @@ export function Contact() {
                     <MessageCircle className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-foreground">WhatsApp</h3>
+                    <h3 className="font-medium text-primary">WhatsApp</h3>
                     <a
                       href={`https://wa.me/${profile.whatsapp.replace(/\s+/g, "")}`}
                       target="_blank"
@@ -150,7 +150,7 @@ export function Contact() {
                     <MapPin className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-foreground">Location</h3>
+                    <h3 className="font-medium text-primary">Location</h3>
                     <p className="text-sm text-muted-foreground">
                       {profile.location}
                     </p>
@@ -167,7 +167,7 @@ export function Contact() {
                   <div>
                     <label
                       htmlFor="name"
-                      className="mb-1.5 block text-sm font-medium text-foreground"
+                      className="mb-1.5 block text-sm font-medium text-primary"
                     >
                       Name
                     </label>
@@ -189,7 +189,7 @@ export function Contact() {
                   <div>
                     <label
                       htmlFor="email"
-                      className="mb-1.5 block text-sm font-medium text-foreground"
+                      className="mb-1.5 block text-sm font-medium text-primary"
                     >
                       Email
                     </label>
@@ -213,7 +213,7 @@ export function Contact() {
                 <div>
                   <label
                     htmlFor="subject"
-                    className="mb-1.5 block text-sm font-medium text-foreground"
+                    className="mb-1.5 block text-sm font-medium text-primary"
                   >
                     Subject
                   </label>
@@ -238,7 +238,7 @@ export function Contact() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="mb-1.5 block text-sm font-medium text-foreground"
+                    className="mb-1.5 block text-sm font-medium text-primary"
                   >
                     Message
                   </label>

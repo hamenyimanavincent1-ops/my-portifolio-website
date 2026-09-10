@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "@/lib/theme-provider";
 import { Button } from "@/components/ui/button";
-import { DownloadCvButton } from "@/components/ui/download-cv";
 import { cn } from "@/lib/utils";
 import { portfolio } from "@/data/portfolio";
 
@@ -103,8 +102,6 @@ export function Navbar() {
             )}
           </Button>
 
-          <DownloadCvButton className="hidden md:inline-flex" />
-
           <a href="#contact" className="hidden md:inline-flex">
             <Button size="sm">Contact Me</Button>
           </a>
@@ -156,7 +153,6 @@ export function Navbar() {
                   )}
                   {theme === "dark" ? "Light Mode" : "Dark Mode"}
                 </Button>
-                <DownloadCvButton className="flex-1" />
               </div>
               <a href="#contact" onClick={() => setIsOpen(false)}>
                 <Button size="sm" className="w-full">

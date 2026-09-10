@@ -209,9 +209,6 @@ export const portfolio: Portfolio = {
     siteDescription:
       "Software Developer from Rwanda building practical digital solutions with modern web technologies.",
     siteUrl: "https://my-portifolio-website.netlify.app",
-    cvPath: "/cv/vincent-hamenyimana-cv.pdf",
-    heroVideo: "/videos/hero.mp4",
-    heroVideoPoster: "/videos/hero-poster.jpg",
     navLinks: [
       { label: "Home", href: "#home" },
       { label: "About", href: "#about" },

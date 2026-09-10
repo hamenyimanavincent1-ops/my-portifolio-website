@@ -11,7 +11,7 @@ interface SectionHeadingProps {
 export function SectionHeading({ title, subtitle, className }: SectionHeadingProps) {
   return (
     <div className={cn("mb-12 text-center", className)}>
-      <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+      <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
         {title}
       </h2>
       {subtitle && (

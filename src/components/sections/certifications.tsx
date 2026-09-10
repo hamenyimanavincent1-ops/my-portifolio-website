@@ -42,7 +42,7 @@ export function Certifications() {
           {certifications.map((cert, index) => (
             <FadeIn key={cert.id} delay={index * 100}>
               <Card hover className="h-full">
-                <h3 className="text-lg font-semibold text-foreground">
+                <h3 className="text-lg font-semibold text-primary">
                   {cert.name}
                 </h3>
                 <p className="text-sm font-medium text-primary">

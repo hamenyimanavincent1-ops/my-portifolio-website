@@ -56,7 +56,7 @@ export function Experience() {
               >
                 <div className="absolute -left-[2.1rem] top-1 h-3 w-3 rounded-full border-2 border-primary bg-background md:left-auto md:right-auto" />
                 <Card hover>
-                  <h3 className="text-lg font-semibold text-foreground">
+                  <h3 className="text-lg font-semibold text-primary">
                     {exp.position}
                   </h3>
                   <p className="text-sm font-medium text-primary">

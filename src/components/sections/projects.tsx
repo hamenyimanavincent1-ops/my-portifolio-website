@@ -67,7 +67,7 @@ export function Projects() {
                 )}
 
                 <div className="mb-3 flex items-start justify-between gap-3">
-                  <h3 className="flex items-center gap-2 text-xl font-semibold text-foreground">
+                  <h3 className="flex items-center gap-2 text-xl font-semibold text-primary">
                     <FolderGit2 className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
                     {project.title}
                   </h3>

@@ -100,9 +100,6 @@ export interface SiteSettings {
   siteName: string;
   siteDescription: string;
   siteUrl: string;
-  cvPath: string;
-  heroVideo?: string;
-  heroVideoPoster?: string;
   navLinks: { label: string; href: string }[];
 }
 

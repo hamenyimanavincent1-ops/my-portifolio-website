@@ -39,7 +39,7 @@ export function Education() {
           {education.map((edu, index) => (
             <FadeIn key={edu.id} delay={index * 100}>
               <Card hover>
-                <h3 className="text-lg font-semibold text-foreground">
+                <h3 className="text-lg font-semibold text-primary">
                   {edu.degree} in {edu.field}
                 </h3>
                 <p className="text-sm font-medium text-primary">

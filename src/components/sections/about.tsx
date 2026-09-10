@@ -40,7 +40,7 @@ export function About() {
               <FadeIn key={item.title} delay={index * 100}>
                 <Card hover className="h-full">
                   <Icon className="mb-3 h-6 w-6 text-primary" />
-                  <h3 className="mb-2 text-lg font-semibold text-foreground">
+                  <h3 className="mb-2 text-lg font-semibold text-primary">
                     {item.title}
                   </h3>
                   <p className="text-sm leading-relaxed text-muted-foreground">
