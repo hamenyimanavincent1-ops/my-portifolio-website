@@ -211,6 +211,7 @@ export const portfolio: Portfolio = {
     siteUrl: "https://my-portifolio-website.netlify.app",
     cvPath: "/cv/vincent-hamenyimana-cv.pdf",
     heroVideo: "/videos/hero.mp4",
+    heroVideoPoster: "/videos/hero-poster.jpg",
     navLinks: [
       { label: "Home", href: "#home" },
       { label: "About", href: "#about" },

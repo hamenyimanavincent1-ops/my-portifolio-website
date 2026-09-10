@@ -23,7 +23,7 @@ export function Hero() {
     >
       <BackgroundVideo
         src={settings.heroVideo}
-        poster={profile.profileImage}
+        poster={settings.heroVideoPoster}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/65 to-background" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--primary)_/_6%,_transparent_50%)]" />
