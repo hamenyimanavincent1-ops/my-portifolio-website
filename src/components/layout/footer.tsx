@@ -93,6 +93,23 @@ export function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 sm:flex-row">
+          <div className="flex items-center gap-3">
+            {socialLinks.map((link) => {
+              const Icon = iconMap[link.icon] || Globe;
+              return (
+                <a
+                  key={link.platform}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-primary/30 hover:text-primary"
+                  aria-label={link.platform}
+                >
+                  <Icon className="h-4 w-4" />
+                </a>
+              );
+            })}
+          </div>
           <p className="text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} {profile.name}. All rights reserved.
           </p>

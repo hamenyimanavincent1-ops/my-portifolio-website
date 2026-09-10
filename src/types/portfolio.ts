@@ -99,6 +99,7 @@ export interface ContactMessage {
 export interface SiteSettings {
   siteName: string;
   siteDescription: string;
+  siteUrl: string;
   cvPath: string;
   navLinks: { label: string; href: string }[];
 }

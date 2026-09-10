@@ -207,6 +207,7 @@ export const portfolio: Portfolio = {
     siteName: "HAMENYIMANA Vincent",
     siteDescription:
       "Software Developer from Rwanda building practical digital solutions with modern web technologies.",
+    siteUrl: "https://my-portifolio-website.netlify.app",
     cvPath: "/cv/vincent-hamenyimana-cv.pdf",
     navLinks: [
       { label: "Home", href: "#home" },

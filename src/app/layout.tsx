@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/lib/theme-provider";
+import { portfolio } from "@/data/portfolio";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,13 +14,17 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = portfolio.settings.siteUrl;
+const siteName = `${portfolio.profile.name} | ${portfolio.profile.professionalTitle}`;
+const siteDescription = portfolio.settings.siteDescription;
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "HAMENYIMANA Vincent | Software Developer",
-    template: "%s | HAMENYIMANA Vincent",
+    default: siteName,
+    template: `%s | ${portfolio.profile.name}`,
   },
-  description:
-    "Software Developer from Rwanda building practical digital solutions with modern web technologies. Specializing in full-stack web development, APIs, and database-driven systems.",
+  description: siteDescription,
   keywords: [
     "software developer",
     "web developer",
@@ -30,22 +35,32 @@ export const metadata: Metadata = {
     "Node.js",
     "portfolio",
   ],
-  authors: [{ name: "HAMENYIMANA Vincent" }],
-  creator: "HAMENYIMANA Vincent",
+  authors: [{ name: portfolio.profile.name }],
+  creator: portfolio.profile.name,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://vincenthamenyimana.dev",
-    siteName: "HAMENYIMANA Vincent | Software Developer",
-    title: "HAMENYIMANA Vincent | Software Developer",
-    description:
-      "Software Developer from Rwanda building practical digital solutions with modern web technologies.",
+    url: siteUrl,
+    siteName,
+    title: siteName,
+    description: siteDescription,
+    images: [
+      {
+        url: "/me.png",
+        width: 512,
+        height: 512,
+        alt: `${portfolio.profile.name} - ${portfolio.profile.professionalTitle}`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "HAMENYIMANA Vincent | Software Developer",
-    description:
-      "Software Developer from Rwanda building practical digital solutions with modern web technologies.",
+    title: siteName,
+    description: siteDescription,
+    images: ["/me.png"],
   },
   robots: {
     index: true,
@@ -62,6 +77,41 @@ export const viewport: Viewport = {
   ],
 };
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: portfolio.profile.name,
+  jobTitle: portfolio.profile.professionalTitle,
+  description: siteDescription,
+  email: `mailto:${portfolio.profile.email}`,
+  telephone: portfolio.profile.phone,
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "RW",
+    addressLocality: portfolio.profile.location,
+  },
+  url: siteUrl,
+  image: `${siteUrl}/me.png`,
+  sameAs: [
+    portfolio.profile.github,
+    portfolio.profile.linkedin,
+    portfolio.profile.youtube,
+  ].filter(Boolean) as string[],
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteName,
+  description: siteDescription,
+  url: siteUrl,
+  author: {
+    "@type": "Person",
+    name: portfolio.profile.name,
+    url: siteUrl,
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -73,6 +123,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} dark`}
       suppressHydrationWarning
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify([personJsonLd, websiteJsonLd]) }}
+        />
+      </head>
       <body className="min-h-screen bg-background text-foreground antialiased">
         <ThemeProvider>{children}</ThemeProvider>
       </body>

@@ -5,6 +5,7 @@ import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "@/lib/theme-provider";
 import { Button } from "@/components/ui/button";
 import { DownloadCvButton } from "@/components/ui/download-cv";
+import { cn } from "@/lib/utils";
 import { portfolio } from "@/data/portfolio";
 
 const navLinks = portfolio.settings.navLinks;
@@ -12,12 +13,33 @@ const navLinks = portfolio.settings.navLinks;
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState("#home");
   const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = navLinks
+      .map((link) => document.querySelector(link.href))
+      .filter((el): el is Element => el !== null);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(`#${entry.target.id}`);
+          }
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px" }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -33,11 +55,12 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        scrolled
+      className={cn(
+        "fixed top-0 z-50 w-full transition-all duration-300",
+        scrolled || isOpen
           ? "border-b border-border bg-background/80 backdrop-blur-md"
           : "bg-transparent"
-      }`}
+      )}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <a
@@ -53,7 +76,12 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className={cn(
+                "rounded-md px-3 py-2 text-sm font-medium transition-colors",
+                active === link.href
+                  ? "bg-primary/10 text-primary"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
             >
               {link.label}
             </a>
@@ -85,6 +113,7 @@ export function Navbar() {
             onClick={() => setIsOpen(!isOpen)}
             className="inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:text-foreground md:hidden"
             aria-label="Toggle menu"
+            aria-expanded={isOpen}
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -99,9 +128,17 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="rounded-md px-3 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                className={cn(
+                  "flex items-center justify-between rounded-md px-3 py-3 text-sm font-medium transition-colors",
+                  active === link.href
+                    ? "bg-primary/10 text-primary"
+                    : "text-muted-foreground hover:bg-accent hover:text-foreground"
+                )}
               >
                 {link.label}
+                {active === link.href && (
+                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                )}
               </a>
             ))}
             <div className="mt-3 flex flex-col gap-2 border-t border-border pt-3">
