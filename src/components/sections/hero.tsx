@@ -25,7 +25,7 @@ export function Hero() {
         src={settings.heroVideo}
         poster={settings.heroVideoPoster}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/65 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/50" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--primary)_/_6%,_transparent_50%)]" />
 
       <div className="relative mx-auto w-full max-w-6xl px-4 py-24 sm:px-6">
