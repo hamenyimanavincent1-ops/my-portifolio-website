@@ -28,7 +28,7 @@ export function Services() {
   const { services } = portfolio;
 
   return (
-    <section id="services" className="py-24 bg-muted/30">
+    <section id="services" className="py-24 bg-card">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           title="Services"

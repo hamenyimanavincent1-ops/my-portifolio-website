@@ -11,7 +11,7 @@ export function Education() {
 
   if (education.length === 0) {
     return (
-<section id="education" className="py-24 bg-muted/30">
+<section id="education" className="py-24 bg-card">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <SectionHeading
             title="Education"
@@ -31,7 +31,7 @@ export function Education() {
   }
 
   return (
-    <section id="education" className="py-24 bg-muted/30">
+    <section id="education" className="py-24 bg-card">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading title="Education" subtitle="Academic background" />
 

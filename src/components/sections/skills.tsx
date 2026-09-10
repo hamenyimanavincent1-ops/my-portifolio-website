@@ -24,7 +24,7 @@ export function Skills() {
   const { skills } = portfolio;
 
   return (
-    <section id="skills" className="py-24">
+    <section id="skills" className="py-24 bg-muted">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           title="Skills & Technologies"

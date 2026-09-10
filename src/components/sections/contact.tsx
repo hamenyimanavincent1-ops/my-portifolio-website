@@ -81,7 +81,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24">
+    <section id="contact" className="py-24 bg-muted">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           title="Contact Me"

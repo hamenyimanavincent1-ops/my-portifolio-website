@@ -11,7 +11,7 @@ export function Experience() {
 
   if (experience.length === 0) {
     return (
-      <section id="experience" className="py-24">
+<section id="experience" className="py-24 bg-muted">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <SectionHeading
             title="Experience"
@@ -35,7 +35,7 @@ export function Experience() {
   }
 
   return (
-    <section id="experience" className="py-24">
+    <section id="experience" className="py-24 bg-muted">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           title="Experience"

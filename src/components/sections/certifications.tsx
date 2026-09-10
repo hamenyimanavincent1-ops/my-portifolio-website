@@ -11,7 +11,7 @@ export function Certifications() {
 
   if (certifications.length === 0) {
     return (
-      <section id="certifications" className="py-24">
+<section id="certifications" className="py-24 bg-muted">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <SectionHeading
             title="Certifications"
@@ -31,7 +31,7 @@ export function Certifications() {
   }
 
   return (
-    <section id="certifications" className="py-24">
+    <section id="certifications" className="py-24 bg-muted">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           title="Certifications"

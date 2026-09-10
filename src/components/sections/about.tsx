@@ -18,7 +18,7 @@ export function About() {
   const { about } = portfolio;
 
   return (
-    <section id="about" className="py-24 bg-muted/30">
+    <section id="about" className="py-24 bg-card">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           title="About Me"
