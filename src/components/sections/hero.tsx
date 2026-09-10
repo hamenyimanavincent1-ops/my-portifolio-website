@@ -5,10 +5,11 @@ import Image from "next/image";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/social-icons";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/fade-in";
+import { BackgroundVideo } from "@/components/ui/background-video";
 import { portfolio } from "@/data/portfolio";
 
 export function Hero() {
-  const { profile, skills, socialLinks } = portfolio;
+  const { profile, skills, socialLinks, settings } = portfolio;
   const techBadges = skills
     .flatMap((category) => category.skills.map((skill) => skill.name))
     .filter((name) =>
@@ -20,6 +21,11 @@ export function Hero() {
       id="home"
       className="relative flex min-h-screen items-center overflow-hidden"
     >
+      <BackgroundVideo
+        src={settings.heroVideo}
+        poster={profile.profileImage}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/65 to-background" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--primary)_/_6%,_transparent_50%)]" />
 
       <div className="relative mx-auto w-full max-w-6xl px-4 py-24 sm:px-6">
